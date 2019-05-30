@@ -23,6 +23,7 @@ while(cap.isOpened()):
     blurred = cv2.GaussianBlur(frame, (13, 13), 0)
     cimg = cv2.cvtColor(blurred, cv2.COLOR_BGR2GRAY)  
     circles = cv2.HoughCircles(cimg, cv2.HOUGH_GRADIENT, 1, cimg.shape[0]/64, param1=50, param2=40, minRadius=20, maxRadius=30)
+    
     if circles is not None:
         cir_len = circles.shape[1] # store length of circles found
         circles = np.uint16(np.around(circles))
