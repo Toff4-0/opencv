@@ -40,7 +40,6 @@ while(cap.isOpened()):
           
 
 
-
     # Display the resulting frame
     cv2.imshow('Frame',frame)
     #cv2.imshow('img',cimg)
