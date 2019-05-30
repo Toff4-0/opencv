@@ -1,8 +1,9 @@
 #!~/testcam/bin/python3
 # -*- coding: utf-8 -*- 
+import sys
 import cv2
 import numpy as np
-import sys
+
 
 
 cap = cv2.VideoCapture(0)
@@ -33,7 +34,7 @@ while(cap.isOpened()):
             # Draw the center of the circle
             cv2.circle(frame, (i[0], i[1]), 2, (0, 0, 255), 3)
             # print du raduis 
-            print('radius= ',i[2])
+            #print('radius= ',i[2])
     else:
         cir_len = 0 # no circles detected
           
