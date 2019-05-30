@@ -6,20 +6,20 @@ import numpy as np
 
 
 
-cap = cv2.VideoCapture(0)
+Cap = cv2.VideoCapture(0)
 
-cap.set(39, 0) # desactive l'autofocus (1 pour activer)
-cap.set(28, 0) # valeur de focus est le param n°28
-cap.set(5,30) # valeur de fps param n° 5
+Cap.set(39, 0) # desactive l'autofocus (1 pour activer)
+Cap.set(28, 0) # valeur de focus est le param n°28
+Cap.set(5,30) # valeur de fps param n° 5
 
 # Check if camera opened successfully
-if (cap.isOpened()== False): 
+if (Cap.isOpened()== False): 
   print("Error opening video stream or file")
  
 # Read until video is completed
-while(cap.isOpened()):
+while(Cap.isOpened()):
   # Capture frame-by-frame
-  ret, frame = cap.read()
+  ret, frame = Cap.read()
   if ret == True:
     blurred = cv2.GaussianBlur(frame, (13, 13), 0)
     cimg = cv2.cvtColor(blurred, cv2.COLOR_BGR2GRAY)  
@@ -54,6 +54,6 @@ while(cap.isOpened()):
  
 # When everything done, release the video capture object
 cap.release()
- 
+
 # Closes all the frames
 cv2.destroyAllWindows()
